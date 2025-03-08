@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-colors duration-200;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary-dark;
+  }
+
+  .btn-outline-primary {
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-white;
+  }
+
+  .nav-link {
+    @apply text-gray-700 hover:text-primary transition-colors;
+  }
+
+  .form-group {
+    @apply mb-4;
+  }
+
+  .form-label {
+    @apply block text-gray-700 font-medium mb-2;
+  }
+
+  .form-input {
+    @apply w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors duration-200;
+  }
+
+  .form-select {
+    @apply w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary bg-white transition-colors duration-200;
+  }
+
+  .form-checkbox {
+    @apply w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary transition-colors duration-200;
+  }
+}
+
+/* Search Container Styles */
+.search-container {
+  @apply max-w-7xl mx-auto;
+}
+
+/* Advanced Search Panel Styles */
+.advanced-search-panel {
+  @apply transform transition-all duration-300 ease-in-out;
+}
+
+.advanced-search-panel.invisible {
+  @apply transform -translate-y-4;
+}
+
+.advanced-search-panel.visible {
+  @apply transform translate-y-0;
+}
+
+/* Facility Checkbox Styles */
+.facility-checkbox {
+  @apply flex items-center p-3 border border-gray-200 rounded-lg cursor-pointer hover:border-primary transition-colors duration-200;
+}
+
+.facility-checkbox input[type="checkbox"] {
+  @apply hidden;
+}
+
+.facility-checkbox input[type="checkbox"]:checked + .facility-label {
+  @apply text-primary;
+}
+
+.facility-label {
+  @apply flex items-center gap-2 text-gray-700 transition-colors duration-200;
+}
+
+.facility-label i {
+  @apply text-lg;
+}
+
+/* Map Search Styles */
+.map-search-input {
+  @apply m-2 w-[300px] bg-white shadow-md;
+}
+
+.map-search .gm-style-iw {
+  @apply text-right;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .advanced-search-panel {
+    @apply p-4;
+  }
+
+  .facility-checkbox {
+    @apply p-2;
+  }
+
+  .map-search-input {
+    @apply w-[200px];
+  }
+}

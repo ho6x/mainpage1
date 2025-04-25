@@ -203,8 +203,8 @@ export const PropertyDetails: React.FC<PropertyDetailsProps> = ({ googleMapsLoad
           {activeTab === 'location' && (
             <div className="h-[400px]">
               <PropertyMap
-                properties={[property]}
-                selectedProperty={property}
+                properties={property && property.id ? [property as any] : []}
+                selectedProperty={property && property.id ? property as any : undefined}
                 googleMapsLoaded={googleMapsLoaded}
                 singlePropertyView
               />
@@ -261,7 +261,7 @@ export const PropertyDetails: React.FC<PropertyDetailsProps> = ({ googleMapsLoad
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white rounded-lg p-6 max-w-lg w-full mx-4">
             <EnquiryForm
-              propertyId={property.id}
+              propertyId={property?.id ?? ''}
               onSubmit={handleEnquirySubmit}
               onClose={() => setShowEnquiryForm(false)}
             />

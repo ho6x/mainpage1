@@ -1,14 +1,18 @@
 import { useEffect, useRef } from 'react';
 
+interface Location {
+  coordinates: {
+    lat: number;
+    lng: number;
+  };
+  city?: string;
+  district?: string;
+}
+
 interface Property {
   id: string;
   title: string;
-  location: {
-    coordinates: {
-      lat: number;
-      lng: number;
-    };
-  };
+  location: Location;
   price: {
     monthly: number;
   };
@@ -82,12 +86,15 @@ const PropertyMap: React.FC<PropertyMapProps> = ({
 
             // عرض نافذة المعلومات
             if (infoWindowRef.current) {
+              const locationText = property.location.city && property.location.district
+                ? `${property.location.city}, ${property.location.district}`
+                : '';
               infoWindowRef.current.setContent(`
                 <div class="p-2 text-right">
                   <h3 class="font-bold">${property.title}</h3>
                   <img src="${property.images[0]}" style="width: 100%; height: 100px; object-fit: cover; margin: 8px 0;" />
                   <p class="text-primary">${property.price.monthly} ر.ع / شهرياً</p>
-                  <p>${property.location.city}, ${property.location.district}</p>
+                  <p>${locationText}</p>
                 </div>
               `);
               infoWindowRef.current.open(map, marker);

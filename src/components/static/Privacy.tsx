@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const Privacy = () => {
   return (
     <div className="bg-white py-24">

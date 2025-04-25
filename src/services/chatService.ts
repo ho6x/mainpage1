@@ -1,24 +1,6 @@
 import { Message } from '../components/chat/types';
 import { predefinedResponses } from '../data/chatResponses';
 
-const API_KEY = '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';
-const API_URL = 'https://api.openai.com/v1/chat/completions';
-
-const systemPrompt = `أنت مساعد عقاري ذكي يعمل في منصة كنف العقارية. مهمتك هي:
-1. مساعدة العملاء في البحث عن العقارات المناسبة
-2. الإجابة عن الأسئلة المتعلقة بالخدمات والمنصة
-3. تقديم نصائح عقارية مفيدة
-4. شرح عملية الحجز والدفع
-5. التعامل مع الاستفسارات بلغة مهنية وودية
-
-يجب أن تكون إجاباتك:
-- مختصرة ومفيدة
-- باللغة العربية الفصحى السهلة
-- دقيقة ومهنية
-- تركز على خدمة العميل
-
-إذا لم تكن متأكداً من إجابة، اطلب من المستخدم التواصل مع خدمة العملاء.`;
-
 export class ChatService {
   private static instance: ChatService;
   private messageHistory: Message[] = [];
@@ -59,7 +41,7 @@ export class ChatService {
 3. التواصل مع خدمة العملاء على الرقم: 800-KANF`;
     }
 
-    return bestResponse.response;
+    return bestResponse ? bestResponse.response : '';
   }
 
   public async sendMessage(message: string): Promise<string> {

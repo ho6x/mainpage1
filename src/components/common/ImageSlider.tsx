@@ -16,7 +16,7 @@ const ImageSlider: React.FC<ImageSliderProps> = ({ images }) => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
   };
 
-  const handleKeyDown = (e: KeyboardEvent) => {
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
     if (e.key === 'ArrowLeft') {
       nextImage();
     } else if (e.key === 'ArrowRight') {

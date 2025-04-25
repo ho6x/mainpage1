@@ -1,4 +1,3 @@
-import React from 'react';
 import { useAuth } from '../auth/AuthContext';
 import { UserType } from '../../types/user';
 import { PropertyOwnerDashboard } from './PropertyOwnerDashboard';

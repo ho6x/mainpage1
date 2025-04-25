@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BlogPost, BlogPostType } from './BlogPost';
+import { BlogPost } from './BlogPost';
 import { BLOG_POSTS } from '../../data/blogPosts';
 
 export const BlogPage: React.FC = () => {

@@ -22,7 +22,7 @@ export const AuthModal = ({ onClose }: AuthModalProps) => {
     setIsLoading(true);
 
     try {
-      await login(loginData.email, loginData.password);
+      await login(loginData.email);
       onClose();
     } catch (err) {
       setError(err instanceof Error ? err.message : 'حدث خطأ ما');

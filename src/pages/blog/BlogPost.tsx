@@ -93,7 +93,7 @@ export const BlogPostPage: React.FC = () => {
             <h2 className="text-2xl font-bold mb-8">مقالات ذات صلة</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {relatedPosts.map(relatedPost => (
-                <BlogPostCard key={relatedPost.id} {...relatedPost} />
+                <BlogPostCard key={relatedPost.id} post={relatedPost} />
               ))}
             </div>
           </div>

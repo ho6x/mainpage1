@@ -1,6 +1,4 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useAuth } from '../auth/AuthContext';
 
 interface Property {
   id: string;
@@ -32,18 +30,6 @@ interface PropertyCardProps {
 }
 
 export const PropertyCard = ({ property }: PropertyCardProps) => {
-  const [isFavorite, setIsFavorite] = useState(false);
-  const { isAuthenticated } = useAuth();
-
-  const toggleFavorite = (e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    if (!isAuthenticated) {
-      return;
-    }
-    setIsFavorite(!isFavorite);
-  };
-
   // تنسيق السعر بالريال العماني
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat('ar-OM', {
@@ -54,7 +40,7 @@ export const PropertyCard = ({ property }: PropertyCardProps) => {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-200 hover:scale-102 cursor-pointer">
+    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
       {/* صورة العقار */}
       <div className="relative h-48 overflow-hidden">
         <Link to={`/property/${property.id}`} className="block h-full">
@@ -64,25 +50,6 @@ export const PropertyCard = ({ property }: PropertyCardProps) => {
             className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-300"
           />
         </Link>
-        <button
-          onClick={toggleFavorite}
-          className="absolute top-2 right-2 p-2 rounded-full bg-white/80 hover:bg-white transition-colors duration-200 z-10"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className={`h-6 w-6 ${isFavorite ? 'text-red-500' : 'text-gray-400'}`}
-            fill={isFavorite ? 'currentColor' : 'none'}
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-            />
-          </svg>
-        </button>
       </div>
 
       {/* تفاصيل العقار */}

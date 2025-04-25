@@ -27,6 +27,11 @@ interface Property {
     count: number;
   };
   features: string[];
+  area: number;
+  bedrooms: number;
+  bathrooms: number;
+  featured: boolean;
+  addedDate: string;
 }
 
 type SortOption = 'newest' | 'price-asc' | 'price-desc' | 'rating';
@@ -38,7 +43,6 @@ interface PropertyListingsProps {
 export const PropertyListings: React.FC<PropertyListingsProps> = ({ googleMapsLoaded }) => {
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid');
   const [sortBy, setSortBy] = useState<SortOption>('newest');
-  const [selectedProperty, setSelectedProperty] = useState<Property | undefined>();
   const [showMap, setShowMap] = useState(false);
 
   // Temporary sample data
@@ -69,6 +73,11 @@ export const PropertyListings: React.FC<PropertyListingsProps> = ({ googleMapsLo
         count: 12,
       },
       features: ['3 غرف نوم', '2 حمام', 'موقف سيارات', 'مسبح'],
+      area: 120,
+      bedrooms: 3,
+      bathrooms: 2,
+      featured: true,
+      addedDate: '2025-01-01',
     },
     {
       id: '2',
@@ -96,6 +105,11 @@ export const PropertyListings: React.FC<PropertyListingsProps> = ({ googleMapsLo
         count: 8,
       },
       features: ['4 غرف نوم', '3 حمام', 'مسبح', 'حديقة'],
+      area: 200,
+      bedrooms: 4,
+      bathrooms: 3,
+      featured: true,
+      addedDate: '2025-01-01',
     },
     {
       id: '3',
@@ -123,6 +137,11 @@ export const PropertyListings: React.FC<PropertyListingsProps> = ({ googleMapsLo
         count: 15,
       },
       features: ['2 غرف نوم', '1 حمام', 'موقف سيارات'],
+      area: 100,
+      bedrooms: 2,
+      bathrooms: 1,
+      featured: false,
+      addedDate: '2025-01-01',
     },
     {
       id: '4',
@@ -150,6 +169,11 @@ export const PropertyListings: React.FC<PropertyListingsProps> = ({ googleMapsLo
         count: 10,
       },
       features: ['1 غرفة نوم', '1 حمام'],
+      area: 50,
+      bedrooms: 1,
+      bathrooms: 1,
+      featured: false,
+      addedDate: '2025-01-01',
     },
     {
       id: '5',
@@ -177,6 +201,11 @@ export const PropertyListings: React.FC<PropertyListingsProps> = ({ googleMapsLo
         count: 5,
       },
       features: ['غرفة واحدة', 'حمام مشترك'],
+      area: 30,
+      bedrooms: 1,
+      bathrooms: 1,
+      featured: false,
+      addedDate: '2025-01-01',
     },
     {
       id: '6',
@@ -204,6 +233,11 @@ export const PropertyListings: React.FC<PropertyListingsProps> = ({ googleMapsLo
         count: 7,
       },
       features: ['مساحة كبيرة', 'موقع ممتاز'],
+      area: 150,
+      bedrooms: 0,
+      bathrooms: 0,
+      featured: true,
+      addedDate: '2025-01-01',
     },
     {
       id: '7',
@@ -231,6 +265,11 @@ export const PropertyListings: React.FC<PropertyListingsProps> = ({ googleMapsLo
         count: 9,
       },
       features: ['2 غرف نوم', '1 حمام'],
+      area: 90,
+      bedrooms: 2,
+      bathrooms: 1,
+      featured: false,
+      addedDate: '2025-01-01',
     },
     {
       id: '8',
@@ -258,6 +297,11 @@ export const PropertyListings: React.FC<PropertyListingsProps> = ({ googleMapsLo
         count: 11,
       },
       features: ['4 غرف نوم', '3 حمام', 'مسبح'],
+      area: 250,
+      bedrooms: 4,
+      bathrooms: 3,
+      featured: true,
+      addedDate: '2025-01-01',
     },
     {
       id: '9',
@@ -285,6 +329,11 @@ export const PropertyListings: React.FC<PropertyListingsProps> = ({ googleMapsLo
         count: 8,
       },
       features: ['1 غرفة نوم', '1 حمام'],
+      area: 40,
+      bedrooms: 1,
+      bathrooms: 1,
+      featured: false,
+      addedDate: '2025-01-01',
     },
     {
       id: '10',
@@ -312,6 +361,11 @@ export const PropertyListings: React.FC<PropertyListingsProps> = ({ googleMapsLo
         count: 6,
       },
       features: ['غرفة واحدة', 'حمام مشترك'],
+      area: 20,
+      bedrooms: 1,
+      bathrooms: 1,
+      featured: false,
+      addedDate: '2025-01-01',
     },
     {
       id: '11',
@@ -339,6 +393,11 @@ export const PropertyListings: React.FC<PropertyListingsProps> = ({ googleMapsLo
         count: 10,
       },
       features: ['2 غرف نوم', '2 حمام', 'مسبح'],
+      area: 110,
+      bedrooms: 2,
+      bathrooms: 2,
+      featured: true,
+      addedDate: '2025-01-01',
     },
     {
       id: '12',
@@ -366,6 +425,11 @@ export const PropertyListings: React.FC<PropertyListingsProps> = ({ googleMapsLo
         count: 15,
       },
       features: ['5 غرف نوم', '4 حمام', 'مسبح', 'حديقة'],
+      area: 300,
+      bedrooms: 5,
+      bathrooms: 4,
+      featured: true,
+      addedDate: '2025-01-01',
     },
     {
       id: '13',
@@ -393,6 +457,11 @@ export const PropertyListings: React.FC<PropertyListingsProps> = ({ googleMapsLo
         count: 9,
       },
       features: ['2 غرف نوم', '1 حمام'],
+      area: 80,
+      bedrooms: 2,
+      bathrooms: 1,
+      featured: false,
+      addedDate: '2025-01-01',
     },
     {
       id: '14',
@@ -420,6 +489,11 @@ export const PropertyListings: React.FC<PropertyListingsProps> = ({ googleMapsLo
         count: 5,
       },
       features: ['غرفة واحدة', 'حمام مشترك'],
+      area: 15,
+      bedrooms: 1,
+      bathrooms: 1,
+      featured: false,
+      addedDate: '2025-01-01',
     },
     {
       id: '15',
@@ -447,6 +521,11 @@ export const PropertyListings: React.FC<PropertyListingsProps> = ({ googleMapsLo
         count: 10,
       },
       features: ['1 غرفة نوم', '1 حمام'],
+      area: 35,
+      bedrooms: 1,
+      bathrooms: 1,
+      featured: false,
+      addedDate: '2025-01-01',
     },
     {
       id: '16',
@@ -474,6 +553,11 @@ export const PropertyListings: React.FC<PropertyListingsProps> = ({ googleMapsLo
         count: 12,
       },
       features: ['4 غرف نوم', '3 حمام', 'مسبح', 'حديقة'],
+      area: 280,
+      bedrooms: 4,
+      bathrooms: 3,
+      featured: true,
+      addedDate: '2025-01-01',
     },
     {
       id: '17',
@@ -501,6 +585,11 @@ export const PropertyListings: React.FC<PropertyListingsProps> = ({ googleMapsLo
         count: 9,
       },
       features: ['2 غرف نوم', '1 حمام'],
+      area: 70,
+      bedrooms: 2,
+      bathrooms: 1,
+      featured: false,
+      addedDate: '2025-01-01',
     },
     {
       id: '18',
@@ -528,6 +617,11 @@ export const PropertyListings: React.FC<PropertyListingsProps> = ({ googleMapsLo
         count: 6,
       },
       features: ['غرفة واحدة', 'حمام مشترك'],
+      area: 10,
+      bedrooms: 1,
+      bathrooms: 1,
+      featured: false,
+      addedDate: '2025-01-01',
     },
     {
       id: '19',
@@ -555,6 +649,11 @@ export const PropertyListings: React.FC<PropertyListingsProps> = ({ googleMapsLo
         count: 9,
       },
       features: ['1 غرفة نوم', '1 حمام'],
+      area: 25,
+      bedrooms: 1,
+      bathrooms: 1,
+      featured: false,
+      addedDate: '2025-01-01',
     },
     {
       id: '20',
@@ -582,6 +681,11 @@ export const PropertyListings: React.FC<PropertyListingsProps> = ({ googleMapsLo
         count: 15,
       },
       features: ['5 غرف نوم', '4 حمام', 'مسبح', 'حديقة'],
+      area: 320,
+      bedrooms: 5,
+      bathrooms: 4,
+      featured: true,
+      addedDate: '2025-01-01',
     },
   ];
 
@@ -681,8 +785,6 @@ export const PropertyListings: React.FC<PropertyListingsProps> = ({ googleMapsLo
           <div className="h-[400px]">
             <PropertyMap
               properties={sortedProperties}
-              selectedProperty={selectedProperty}
-              onPropertySelect={(property) => setSelectedProperty(property)}
               googleMapsLoaded={googleMapsLoaded}
             />
           </div>
@@ -699,15 +801,11 @@ export const PropertyListings: React.FC<PropertyListingsProps> = ({ googleMapsLo
             <PropertyCard 
               key={property.id} 
               property={property}
-              isSelected={selectedProperty?.id === property.id}
-              onClick={() => setSelectedProperty(property)}
             />
           ) : (
             <PropertyListItem 
               key={property.id} 
               property={property}
-              isSelected={selectedProperty?.id === property.id}
-              onClick={() => setSelectedProperty(property)}
             />
           )
         ))}

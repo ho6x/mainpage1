@@ -4,10 +4,9 @@ import { quickQuestions } from './quickQuestions';
 import { ChatService } from '../../services/chatService';
 
 interface ChatBotProps {
-  onClose: () => void;
 }
 
-export const ChatBot: React.FC<ChatBotProps> = ({ onClose }) => {
+export const ChatBot: React.FC<ChatBotProps> = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     {

@@ -73,7 +73,7 @@ function AppContent() {
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<Home googleMapsLoaded={isGoogleMapsLoaded} />} />
-          <Route path="/search" element={<AdvancedSearch />} />
+          <Route path="/search" element={<AdvancedSearch googleMapsLoaded={isGoogleMapsLoaded} />} />
           <Route path="/properties" element={<PropertiesPage googleMapsLoaded={isGoogleMapsLoaded} />} />
           <Route path="/property/:id" element={<PropertyDetailsPage googleMapsLoaded={isGoogleMapsLoaded} />} />
           <Route path="/services" element={<AdditionalServices />} />
@@ -89,7 +89,7 @@ function AppContent() {
       </main>
       <Footer />
       {showAuthPrompt && <AuthModal onClose={() => setShowAuthPrompt(false)} />}
-      <ChatBot onClose={() => console.log('Chat closed')} />
+      <ChatBot />
     </div>
   );
 }

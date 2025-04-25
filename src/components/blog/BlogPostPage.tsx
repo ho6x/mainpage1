@@ -1,11 +1,11 @@
 import React from 'react';
 import { useParams, Navigate } from 'react-router-dom';
-import { BLOG_POSTS } from './BlogPage';
+import { BLOG_POSTS } from '../../data/blogPosts';
 import { BlogPost } from './BlogPost';
 
 export const BlogPostPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
-  const post = BLOG_POSTS.find(post => post.slug === slug);
+  const post = BLOG_POSTS.find((post: any) => post.slug === slug);
 
   if (!post) {
     return <Navigate to="/404" />;
@@ -44,9 +44,9 @@ export const BlogPostPage: React.FC = () => {
           <h2 className="text-2xl font-bold text-gray-900 mb-6">مقالات ذات صلة</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {BLOG_POSTS
-              .filter(relatedPost => relatedPost.id !== post.id)
+              .filter((relatedPost: any) => relatedPost.id !== post.id)
               .slice(0, 3)
-              .map(relatedPost => (
+              .map((relatedPost: any) => (
                 <BlogPost key={relatedPost.id} {...relatedPost} />
               ))}
           </div>

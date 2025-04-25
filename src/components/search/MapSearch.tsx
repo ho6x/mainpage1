@@ -1,12 +1,8 @@
-import { useEffect, useRef, useState } from 'react';
-
 interface MapSearchProps {
   onLocationSelect: (location: { lat: number; lng: number }) => void;
 }
 
 export const MapSearch = ({ onLocationSelect }: MapSearchProps) => {
-  const mapRef = useRef<HTMLDivElement>(null);
-
   // Temporary placeholder for map functionality
   const handleManualLocationSelect = () => {
     // Default to Muscat coordinates

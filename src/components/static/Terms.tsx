@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const Terms = () => {
   return (
     <div className="bg-white py-24">

@@ -1,25 +1,27 @@
 import { Link } from 'react-router-dom';
 
-interface PropertyListItemProps {
-  property: {
-    id: string;
-    title: string;
-    description: string;
-    price: {
-      monthly: number;
-      yearly: number;
-    };
-    location: {
-      city: string;
-      district: string;
-    };
-    images: string[];
-    rating: {
-      average: number;
-      count: number;
-    };
-    features: string[];
+interface Property {
+  id: string;
+  title: string;
+  description: string;
+  price: {
+    monthly: number;
+    yearly: number;
   };
+  location: {
+    city: string;
+    district: string;
+  };
+  images: string[];
+  rating: {
+    average: number;
+    count: number;
+  };
+  features: string[];
+}
+
+interface PropertyListItemProps {
+  property: Property;
 }
 
 export const PropertyListItem = ({ property }: PropertyListItemProps) => {

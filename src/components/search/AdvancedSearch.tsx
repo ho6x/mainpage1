@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from 'react';
-import { MapSearch } from './MapSearch';
 
 interface SearchFilters {
   location: string;

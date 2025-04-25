@@ -40,9 +40,9 @@ export const PropertyCard = ({ property }: PropertyCardProps) => {
   };
 
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+    <div className="bg-white rounded-lg shadow-md p-2 flex flex-col w-full max-w-full text-sm">
       {/* صورة العقار */}
-      <div className="relative h-48 overflow-hidden">
+      <div className="relative h-32 sm:h-40 md:h-48 overflow-hidden">
         <Link to={`/property/${property.id}`} className="block h-full">
           <img
             src={property.images[0]}
@@ -53,10 +53,10 @@ export const PropertyCard = ({ property }: PropertyCardProps) => {
       </div>
 
       {/* تفاصيل العقار */}
-      <div className="p-4">
+      <div className="p-2">
         <Link to={`/property/${property.id}`} className="block">
-          <div className="flex justify-between items-start mb-2">
-            <h3 className="text-lg font-semibold text-gray-900 mb-1 hover:text-primary">
+          <div className="flex justify-between items-start mb-1">
+            <h3 className="text-base sm:text-lg font-bold mb-1 hover:text-primary">
               {property.title}
             </h3>
             <div className="flex items-center">
@@ -66,9 +66,9 @@ export const PropertyCard = ({ property }: PropertyCardProps) => {
             </div>
           </div>
 
-          <p className="text-gray-600 text-sm mb-4 line-clamp-2">{property.description}</p>
+          <p className="text-gray-600 text-sm mb-2 line-clamp-2">{property.description}</p>
 
-          <div className="flex justify-between items-center mb-4">
+          <div className="flex justify-between items-center mb-2">
             <div className="flex items-center text-gray-500">
               <span className="text-sm">{property.location.district}، {property.location.city}</span>
             </div>
@@ -89,7 +89,7 @@ export const PropertyCard = ({ property }: PropertyCardProps) => {
             </div>
           </div>
 
-          <div className="border-t pt-4">
+          <div className="border-t pt-2">
             <div className="flex justify-between items-center">
               <div>
                 <span className="text-primary text-lg font-bold">{formatPrice(property.price.monthly)}</span>

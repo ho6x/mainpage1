@@ -3,33 +3,33 @@ import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 
 export const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-gray-900 text-white py-4 px-2 flex flex-col sm:flex-row items-center justify-between gap-2 text-sm">
       <div className="container mx-auto px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* عن كنف */}
           <div>
-            <h3 className="text-xl font-bold mb-4">عن كنف</h3>
-            <p className="text-gray-400 mb-6">
+            <h3 className="text-lg font-bold mb-4">عن كنف</h3>
+            <p className="text-gray-400 mb-6 text-sm">
               نحن نقدم حلولاً متكاملة لإدارة العقارات، ونساعد الملاك في تحقيق أقصى استفادة من عقاراتهم من خلال خدمات إدارية احترافية.
             </p>
           </div>
 
           {/* روابط سريعة */}
           <div>
-            <h3 className="text-xl font-bold mb-4">روابط سريعة</h3>
+            <h3 className="text-lg font-bold mb-4">روابط سريعة</h3>
             <ul className="space-y-3">
               <li>
-                <Link to="/about" className="text-gray-400 hover:text-white transition-colors duration-200">
+                <Link to="/about" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
                   عن كنف
                 </Link>
               </li>
               <li>
-                <Link to="/manage-property" className="text-gray-400 hover:text-white transition-colors duration-200">
+                <Link to="/manage-property" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
                   طلب إدارة عقار
                 </Link>
               </li>
               <li>
-                <Link to="/properties" className="text-gray-400 hover:text-white transition-colors duration-200">
+                <Link to="/properties" className="text-gray-400 hover:text-white transition-colors duration-200 text-sm">
                   تصفح العقارات
                 </Link>
               </li>
@@ -38,22 +38,22 @@ export const Footer = () => {
 
           {/* تواصل معنا */}
           <div>
-            <h3 className="text-xl font-bold mb-4">تواصل معنا</h3>
+            <h3 className="text-lg font-bold mb-4">تواصل معنا</h3>
             <div className="space-y-3">
-              <p className="text-gray-400">البريد الإلكتروني: info@kanf.sa</p>
-              <p className="text-gray-400">هاتف: 920000000</p>
-              <div className="flex space-x-4 rtl:space-x-reverse mt-4">
+              <p className="text-gray-400 text-sm">البريد الإلكتروني: info@kanf.sa</p>
+              <p className="text-gray-400 text-sm">هاتف: 920000000</p>
+              <div className="flex items-center space-x-2 sm:space-x-4 mb-2 sm:mb-0">
                 <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
-                  <FaFacebook size={24} />
+                  <FaFacebook size={20} />
                 </a>
                 <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
-                  <FaTwitter size={24} />
+                  <FaTwitter size={20} />
                 </a>
                 <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
-                  <FaInstagram size={24} />
+                  <FaInstagram size={20} />
                 </a>
                 <a href="#" className="text-gray-400 hover:text-white transition-colors duration-200">
-                  <FaLinkedin size={24} />
+                  <FaLinkedin size={20} />
                 </a>
               </div>
             </div>
